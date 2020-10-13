@@ -5,7 +5,7 @@ export function getDraft(contextType: string, contextId: string|null): Promise<a
 }
 
 export function setDraft(draftData: any) {
-  return api.put('/api/drafts', { data: draftData });
+  return api.put('/api/drafts', { data: draftData }).then(getCallData);
 }
 
 export function deleteDraft(contextData: string, contextId: string|null) {
